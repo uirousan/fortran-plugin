@@ -5,7 +5,9 @@ FILE
         PsiElement(lock)('lock')
         PsiElement(()('(')
         DESIGNATOR
-          PsiElement(identifier)('a')
+          DATA_REFERENCE
+            DATA_REFERENCE_PART
+              PsiElement(identifier)('a')
         PsiElement(,)(',')
         PsiWhiteSpace(' ')
         LOCK_STAT
@@ -15,7 +17,9 @@ FILE
             PsiElement(=)('=')
             PsiWhiteSpace(' ')
             DESIGNATOR
-              PsiElement(identifier)('st')
+              DATA_REFERENCE
+                DATA_REFERENCE_PART
+                  PsiElement(identifier)('st')
         PsiElement())(')')
       PsiElement(eol)('\n')
       SYNC_ALL_STMT
@@ -44,7 +48,9 @@ FILE
           PsiElement(=)('=')
           PsiWhiteSpace(' ')
           DESIGNATOR
-            PsiElement(identifier)('e')
+            DATA_REFERENCE
+              DATA_REFERENCE_PART
+                PsiElement(identifier)('e')
         PsiElement())(')')
       PsiElement(eol)('\n')
       EXIT_STMT
@@ -83,10 +89,14 @@ FILE
         PsiElement(()('(')
         ADD_EXPR
           DESIGNATOR
-            PsiElement(identifier)('a')
+            DATA_REFERENCE
+              DATA_REFERENCE_PART
+                PsiElement(identifier)('a')
           PsiElement(+)('+')
           DESIGNATOR
-            PsiElement(identifier)('c')
+            DATA_REFERENCE
+              DATA_REFERENCE_PART
+                PsiElement(identifier)('c')
         PsiElement())(')')
         PsiWhiteSpace(' ')
         LABEL
@@ -103,10 +113,14 @@ FILE
         PsiWhiteSpace(' ')
         ADD_EXPR
           DESIGNATOR
-            PsiElement(identifier)('a')
+            DATA_REFERENCE
+              DATA_REFERENCE_PART
+                PsiElement(identifier)('a')
           PsiElement(+)('+')
           DESIGNATOR
-            PsiElement(identifier)('b')
+            DATA_REFERENCE
+              DATA_REFERENCE_PART
+                PsiElement(identifier)('b')
       PsiElement(eol)('\n')
       ERROR_STOP_STMT
         PsiElement(error)('error')
@@ -117,7 +131,9 @@ FILE
         PsiElement(unlock)('unlock')
         PsiElement(()('(')
         DESIGNATOR
-          PsiElement(identifier)('a')
+          DATA_REFERENCE
+            DATA_REFERENCE_PART
+              PsiElement(identifier)('a')
         PsiElement())(')')
       PsiElement(eol)('\n')
     END_PROGRAM_STMT

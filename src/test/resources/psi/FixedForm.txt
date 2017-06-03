@@ -20,7 +20,9 @@ FILE
       PsiWhiteSpace('      ')
       ASSIGNMENT_STMT
         DESIGNATOR
-          PsiElement(identifier)('x')
+          DATA_REFERENCE
+            DATA_REFERENCE_PART
+              PsiElement(identifier)('x')
         PsiWhiteSpace(' ')
         PsiElement(=)('=')
         PsiWhiteSpace(' ')
@@ -45,22 +47,30 @@ FILE
         PsiElement(,)(',')
         PsiWhiteSpace(' ')
         DESIGNATOR
-          PsiElement(identifier)('a')
+          DATA_REFERENCE
+            DATA_REFERENCE_PART
+              PsiElement(identifier)('a')
         PsiElement())(')')
         PsiWhiteSpace(' ')
         DESIGNATOR
-          PsiElement(identifier)('c')
+          DATA_REFERENCE
+            DATA_REFERENCE_PART
+              PsiElement(identifier)('c')
         PsiElement(,)(',')
         PsiWhiteSpace(' ')
         DESIGNATOR
-          PsiElement(identifier)('b')
+          DATA_REFERENCE
+            DATA_REFERENCE_PART
+              PsiElement(identifier)('b')
       PsiElement(eol)('\n')
       LABEL
         PsiElement(integerliteral)('123')
       PsiWhiteSpace('   ')
       ASSIGNMENT_STMT
         DESIGNATOR
-          PsiElement(identifier)('y')
+          DATA_REFERENCE
+            DATA_REFERENCE_PART
+              PsiElement(identifier)('y')
         PsiWhiteSpace(' ')
         PsiElement(=)('=')
         PsiWhiteSpace(' ')
@@ -75,7 +85,9 @@ FILE
       PsiWhiteSpace('      ')
       ASSIGNMENT_STMT
         DESIGNATOR
-          PsiElement(identifier)('str')
+          DATA_REFERENCE
+            DATA_REFERENCE_PART
+              PsiElement(identifier)('str')
         PsiWhiteSpace(' ')
         PsiElement(=)('=')
         PsiWhiteSpace(' ')
@@ -88,25 +100,27 @@ FILE
       PsiWhiteSpace('      ')
       ASSIGNMENT_STMT
         DESIGNATOR
-          DATA_REF
-            PsiElement(identifier)('END')
-            PsiElement(()('(')
-            SECTION_SUBSCRIPT
-              CONSTANT
-                PsiElement(integerliteral)('1')
-            PsiElement())(')')
-        PsiWhiteSpace(' ')
-        PsiElement(=)('=')
-        PsiWhiteSpace(' ')
-        ADD_EXPR
-          DESIGNATOR
-            DATA_REF
-              PsiElement(identifier)('STARTA')
+          DATA_REFERENCE
+            DATA_REFERENCE_PART
+              PsiElement(identifier)('END')
               PsiElement(()('(')
               SECTION_SUBSCRIPT
                 CONSTANT
                   PsiElement(integerliteral)('1')
               PsiElement())(')')
+        PsiWhiteSpace(' ')
+        PsiElement(=)('=')
+        PsiWhiteSpace(' ')
+        ADD_EXPR
+          DESIGNATOR
+            DATA_REFERENCE
+              DATA_REFERENCE_PART
+                PsiElement(identifier)('STARTA')
+                PsiElement(()('(')
+                SECTION_SUBSCRIPT
+                  CONSTANT
+                    PsiElement(integerliteral)('1')
+                PsiElement())(')')
           PsiWhiteSpace(' ')
           PsiElement(+)('+')
           PsiWhiteSpace(' ')
@@ -115,26 +129,28 @@ FILE
               PsiElement(()('(')
               ADD_EXPR
                 DESIGNATOR
-                  DATA_REF
-                    PsiElement(identifier)('NPIXA')
-                    PsiElement(()('(')
-                    SECTION_SUBSCRIPT
-                      CONSTANT
-                        PsiElement(integerliteral)('1')
-                    PsiElement())(')')
+                  DATA_REFERENCE
+                    DATA_REFERENCE_PART
+                      PsiElement(identifier)('NPIXA')
+                      PsiElement(()('(')
+                      SECTION_SUBSCRIPT
+                        CONSTANT
+                          PsiElement(integerliteral)('1')
+                      PsiElement())(')')
                 PsiElement(-)('-')
                 CONSTANT
                   PsiElement(integerliteral)('1')
               PsiElement())(')')
             PsiElement(*)('*')
             DESIGNATOR
-              DATA_REF
-                PsiElement(identifier)('STEPA')
-                PsiElement(()('(')
-                SECTION_SUBSCRIPT
-                  CONSTANT
-                    PsiElement(integerliteral)('1')
-                PsiElement())(')')
+              DATA_REFERENCE
+                DATA_REFERENCE_PART
+                  PsiElement(identifier)('STEPA')
+                  PsiElement(()('(')
+                  SECTION_SUBSCRIPT
+                    CONSTANT
+                      PsiElement(integerliteral)('1')
+                  PsiElement())(')')
       PsiElement(eol)('\n')
     PsiWhiteSpace('      ')
     END_PROGRAM_STMT

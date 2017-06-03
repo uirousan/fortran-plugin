@@ -40,7 +40,9 @@ FILE
             BLOCK
               ASSIGNMENT_STMT
                 DESIGNATOR
-                  PsiElement(identifier)('a')
+                  DATA_REFERENCE
+                    DATA_REFERENCE_PART
+                      PsiElement(identifier)('a')
                 PsiWhiteSpace(' ')
                 PsiElement(=)('=')
                 PsiWhiteSpace(' ')
@@ -99,7 +101,9 @@ FILE
             BLOCK
               ASSIGNMENT_STMT
                 DESIGNATOR
-                  PsiElement(identifier)('c')
+                  DATA_REFERENCE
+                    DATA_REFERENCE_PART
+                      PsiElement(identifier)('c')
                 PsiWhiteSpace(' ')
                 PsiElement(=)('=')
                 PsiWhiteSpace(' ')

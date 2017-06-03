@@ -24,7 +24,9 @@ FILE
         PsiElement(,)(',')
         PsiWhiteSpace(' ')
         DESIGNATOR
-          PsiElement(identifier)('item1')
+          DATA_REFERENCE
+            DATA_REFERENCE_PART
+              PsiElement(identifier)('item1')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
       PRINT_STMT
@@ -35,7 +37,9 @@ FILE
         PsiWhiteSpace(' ')
         MULT_EXPR
           DESIGNATOR
-            PsiElement(identifier)('a')
+            DATA_REFERENCE
+              DATA_REFERENCE_PART
+                PsiElement(identifier)('a')
           PsiElement(/)('/')
           CONSTANT
             PsiElement(integerliteral)('100')
@@ -48,15 +52,21 @@ FILE
         PsiElement(,)(',')
         PsiWhiteSpace(' ')
         DESIGNATOR
-          PsiElement(identifier)('item1')
+          DATA_REFERENCE
+            DATA_REFERENCE_PART
+              PsiElement(identifier)('item1')
         PsiElement(,)(',')
         PsiWhiteSpace(' ')
         DESIGNATOR
-          PsiElement(identifier)('item2')
+          DATA_REFERENCE
+            DATA_REFERENCE_PART
+              PsiElement(identifier)('item2')
         PsiElement(,)(',')
         PsiWhiteSpace(' ')
         DESIGNATOR
-          PsiElement(identifier)('item3')
+          DATA_REFERENCE
+            DATA_REFERENCE_PART
+              PsiElement(identifier)('item3')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
       LABEL
@@ -80,7 +90,9 @@ FILE
         PsiWhiteSpace(' ')
         MULT_EXPR
           DESIGNATOR
-            PsiElement(identifier)('item1')
+            DATA_REFERENCE
+              DATA_REFERENCE_PART
+                PsiElement(identifier)('item1')
           PsiWhiteSpace(' ')
           PsiElement(*)('*')
           PsiWhiteSpace(' ')
@@ -90,7 +102,9 @@ FILE
         PsiWhiteSpace(' ')
         ADD_EXPR
           DESIGNATOR
-            PsiElement(identifier)('item2')
+            DATA_REFERENCE
+              DATA_REFERENCE_PART
+                PsiElement(identifier)('item2')
           PsiWhiteSpace(' ')
           PsiElement(+)('+')
           PsiWhiteSpace(' ')
@@ -110,15 +124,21 @@ FILE
         PsiElement(,)(',')
         PsiWhiteSpace(' ')
         DESIGNATOR
-          PsiElement(identifier)('i')
+          DATA_REFERENCE
+            DATA_REFERENCE_PART
+              PsiElement(identifier)('i')
         PsiElement(,)(',')
         PsiWhiteSpace(' ')
         DESIGNATOR
-          PsiElement(identifier)('j')
+          DATA_REFERENCE
+            DATA_REFERENCE_PART
+              PsiElement(identifier)('j')
         PsiElement(,)(',')
         PsiWhiteSpace(' ')
         DESIGNATOR
-          PsiElement(identifier)('vector')
+          DATA_REFERENCE
+            DATA_REFERENCE_PART
+              PsiElement(identifier)('vector')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
       PRINT_STMT
@@ -128,27 +148,36 @@ FILE
         PsiElement(,)(',')
         PsiWhiteSpace(' ')
         DESIGNATOR
-          PsiElement(identifier)('i')
+          DATA_REFERENCE
+            DATA_REFERENCE_PART
+              PsiElement(identifier)('i')
         PsiElement(,)(',')
         PsiWhiteSpace(' ')
         DESIGNATOR
-          PsiElement(identifier)('j')
+          DATA_REFERENCE
+            DATA_REFERENCE_PART
+              PsiElement(identifier)('j')
         PsiElement(,)(',')
         PsiWhiteSpace(' ')
         IO_IMPLIED_DO
           PsiElement(()('(')
           DESIGNATOR
-            DATA_REF
-              PsiElement(identifier)('vector')
-              PsiElement(()('(')
-              SECTION_SUBSCRIPT
-                DESIGNATOR
-                  PsiElement(identifier)('i')
-              PsiElement())(')')
+            DATA_REFERENCE
+              DATA_REFERENCE_PART
+                PsiElement(identifier)('vector')
+                PsiElement(()('(')
+                SECTION_SUBSCRIPT
+                  DESIGNATOR
+                    DATA_REFERENCE
+                      DATA_REFERENCE_PART
+                        PsiElement(identifier)('i')
+                PsiElement())(')')
           PsiElement(,)(',')
           PsiWhiteSpace(' ')
           DESIGNATOR
-            PsiElement(identifier)('i')
+            DATA_REFERENCE
+              DATA_REFERENCE_PART
+                PsiElement(identifier)('i')
           PsiWhiteSpace(' ')
           PsiElement(=)('=')
           PsiWhiteSpace(' ')
@@ -193,16 +222,22 @@ FILE
           PsiElement(identifier)('iostat')
           PsiElement(=)('=')
           DESIGNATOR
-            PsiElement(identifier)('n')
+            DATA_REFERENCE
+              DATA_REFERENCE_PART
+                PsiElement(identifier)('n')
         PsiWhiteSpace(' ')
         PsiElement())(')')
         PsiWhiteSpace(' ')
         DESIGNATOR
-          PsiElement(identifier)('x')
+          DATA_REFERENCE
+            DATA_REFERENCE_PART
+              PsiElement(identifier)('x')
         PsiElement(,)(',')
         PsiWhiteSpace(' ')
         DESIGNATOR
-          PsiElement(identifier)('y')
+          DATA_REFERENCE
+            DATA_REFERENCE_PART
+              PsiElement(identifier)('y')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
       READ_STMT
@@ -216,11 +251,15 @@ FILE
         PsiElement())(')')
         PsiWhiteSpace(' ')
         DESIGNATOR
-          PsiElement(identifier)('a')
+          DATA_REFERENCE
+            DATA_REFERENCE_PART
+              PsiElement(identifier)('a')
         PsiElement(,)(',')
         PsiWhiteSpace(' ')
         DESIGNATOR
-          PsiElement(identifier)('v')
+          DATA_REFERENCE
+            DATA_REFERENCE_PART
+              PsiElement(identifier)('v')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
       READ_STMT
@@ -229,11 +268,15 @@ FILE
         PsiElement(,)(',')
         PsiWhiteSpace(' ')
         DESIGNATOR
-          PsiElement(identifier)('a')
+          DATA_REFERENCE
+            DATA_REFERENCE_PART
+              PsiElement(identifier)('a')
         PsiElement(,)(',')
         PsiWhiteSpace(' ')
         DESIGNATOR
-          PsiElement(identifier)('v')
+          DATA_REFERENCE
+            DATA_REFERENCE_PART
+              PsiElement(identifier)('v')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
       READ_STMT
@@ -251,7 +294,9 @@ FILE
         PsiElement())(')')
         PsiWhiteSpace(' ')
         DESIGNATOR
-          PsiElement(identifier)('v')
+          DATA_REFERENCE
+            DATA_REFERENCE_PART
+              PsiElement(identifier)('v')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
       READ_STMT
@@ -268,7 +313,9 @@ FILE
           PsiElement(identifier)('nml')
           PsiElement(=)('=')
           DESIGNATOR
-            PsiElement(identifier)('g')
+            DATA_REFERENCE
+              DATA_REFERENCE_PART
+                PsiElement(identifier)('g')
         PsiElement())(')')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
@@ -297,16 +344,22 @@ FILE
           PsiElement(identifier)('iostat')
           PsiElement(=)('=')
           DESIGNATOR
-            PsiElement(identifier)('n')
+            DATA_REFERENCE
+              DATA_REFERENCE_PART
+                PsiElement(identifier)('n')
         PsiWhiteSpace(' ')
         PsiElement())(')')
         PsiWhiteSpace(' ')
         DESIGNATOR
-          PsiElement(identifier)('x')
+          DATA_REFERENCE
+            DATA_REFERENCE_PART
+              PsiElement(identifier)('x')
         PsiElement(,)(',')
         PsiWhiteSpace(' ')
         DESIGNATOR
-          PsiElement(identifier)('y')
+          DATA_REFERENCE
+            DATA_REFERENCE_PART
+              PsiElement(identifier)('y')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
       WRITE_STMT
@@ -323,11 +376,15 @@ FILE
         PsiElement())(')')
         PsiWhiteSpace(' ')
         DESIGNATOR
-          PsiElement(identifier)('a')
+          DATA_REFERENCE
+            DATA_REFERENCE_PART
+              PsiElement(identifier)('a')
         PsiElement(,)(',')
         PsiWhiteSpace(' ')
         DESIGNATOR
-          PsiElement(identifier)('v')
+          DATA_REFERENCE
+            DATA_REFERENCE_PART
+              PsiElement(identifier)('v')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
       WRITE_STMT
@@ -345,7 +402,9 @@ FILE
           PsiElement(identifier)('nml')
           PsiElement(=)('=')
           DESIGNATOR
-            PsiElement(identifier)('g')
+            DATA_REFERENCE
+              DATA_REFERENCE_PART
+                PsiElement(identifier)('g')
         PsiWhiteSpace(' ')
         PsiElement())(')')
       PsiElement(eol)('\n')

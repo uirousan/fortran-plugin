@@ -54,17 +54,23 @@ FILE
             PsiWhiteSpace(' ')
             REL_EXPR
               DESIGNATOR
-                PsiElement(identifier)('j')
+                DATA_REFERENCE
+                  DATA_REFERENCE_PART
+                    PsiElement(identifier)('j')
               PsiWhiteSpace(' ')
               PsiElement(NEQ)('/=')
               PsiWhiteSpace(' ')
               DESIGNATOR
-                PsiElement(identifier)('i')
+                DATA_REFERENCE
+                  DATA_REFERENCE_PART
+                    PsiElement(identifier)('i')
             PsiElement())(')')
           PsiWhiteSpace(' ')
           ASSIGNMENT_STMT
             DESIGNATOR
-              PsiElement(identifier)('a')
+              DATA_REFERENCE
+                DATA_REFERENCE_PART
+                  PsiElement(identifier)('a')
             PsiWhiteSpace(' ')
             PsiElement(=)('=')
             PsiWhiteSpace(' ')
@@ -100,7 +106,9 @@ FILE
           PsiWhiteSpace('    ')
           ASSIGNMENT_STMT
             DESIGNATOR
-              PsiElement(identifier)('v')
+              DATA_REFERENCE
+                DATA_REFERENCE_PART
+                  PsiElement(identifier)('v')
             PsiElement(=)('=')
             CONSTANT
               PsiElement(integerliteral)('1')
@@ -119,7 +127,9 @@ FILE
           PsiElement(()('(')
           REL_EXPR
             DESIGNATOR
-              PsiElement(identifier)('l')
+              DATA_REFERENCE
+                DATA_REFERENCE_PART
+                  PsiElement(identifier)('l')
             PsiWhiteSpace(' ')
             PsiElement(LT)('<')
             PsiWhiteSpace(' ')
@@ -129,7 +139,9 @@ FILE
           PsiWhiteSpace(' ')
           ASSIGNMENT_STMT
             DESIGNATOR
-              PsiElement(identifier)('b')
+              DATA_REFERENCE
+                DATA_REFERENCE_PART
+                  PsiElement(identifier)('b')
             PsiWhiteSpace(' ')
             PsiElement(=)('=')
             PsiWhiteSpace(' ')
@@ -144,7 +156,9 @@ FILE
             PsiElement(()('(')
             REL_EXPR
               DESIGNATOR
-                PsiElement(identifier)('k')
+                DATA_REFERENCE
+                  DATA_REFERENCE_PART
+                    PsiElement(identifier)('k')
               PsiElement(LT)('<')
               CONSTANT
                 PsiElement(integerliteral)('0')
@@ -153,7 +167,9 @@ FILE
           PsiWhiteSpace('      ')
           ASSIGNMENT_STMT
             DESIGNATOR
-              PsiElement(identifier)('c')
+              DATA_REFERENCE
+                DATA_REFERENCE_PART
+                  PsiElement(identifier)('c')
             PsiWhiteSpace(' ')
             PsiElement(=)('=')
             PsiWhiteSpace(' ')
@@ -167,7 +183,9 @@ FILE
             PsiElement(()('(')
             REL_EXPR
               DESIGNATOR
-                PsiElement(identifier)('k')
+                DATA_REFERENCE
+                  DATA_REFERENCE_PART
+                    PsiElement(identifier)('k')
               PsiElement(LT)('<')
               CONSTANT
                 PsiElement(integerliteral)('3')
@@ -176,7 +194,9 @@ FILE
           PsiWhiteSpace('      ')
           ASSIGNMENT_STMT
             DESIGNATOR
-              PsiElement(identifier)('c')
+              DATA_REFERENCE
+                DATA_REFERENCE_PART
+                  PsiElement(identifier)('c')
             PsiElement(=)('=')
             CONSTANT
               PsiElement(integerliteral)('5')
@@ -188,7 +208,9 @@ FILE
           PsiWhiteSpace('      ')
           ASSIGNMENT_STMT
             DESIGNATOR
-              PsiElement(identifier)('c')
+              DATA_REFERENCE
+                DATA_REFERENCE_PART
+                  PsiElement(identifier)('c')
             PsiElement(=)('=')
             CONSTANT
               PsiElement(integerliteral)('6')

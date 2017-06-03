@@ -529,7 +529,7 @@ data_stmt_object ::= variable | data_implied_do
 // R537
 data_implied_do ::= '(' <<list data_i_do_object>> ',' fidentifier '=' expr ',' expr (',' expr)?  ')'
 // R538
-data_i_do_object ::= (data_ref | data_implied_do) !'=' { pin= 2 }
+data_i_do_object ::= (data_reference | data_implied_do) !'=' { pin= 2 }
 // R539 is trivial
 // R540
 data_stmt_value ::= (data_stmt_repeat '*')? data_stmt_constant
@@ -587,7 +587,7 @@ equivalence_stmt ::= equivalence_ <<list equivalence_set>> { pin = 2 }
 // R566
 equivalence_set ::= '(' equivalence_object ',' <<list equivalence_object>> ')'
 // R567
-equivalence_object ::= (fidentifier !('%' | '(' | '[')) | substring | data_ref
+equivalence_object ::= substring | data_reference
 // R568
 common_stmt ::= common_ (('/' fidentifier? '/') | '//')? <<list common_block_object>> ((',')? (('/' fidentifier? '/') | '//') <<list common_block_object>>)* { pin = 1 }
 // R569
@@ -601,13 +601,13 @@ private variable ::= designator //| expr
 // R608
 substring ::= parent_string '(' substring_range ')'
 // R609
-parent_string ::= (fidentifier !('%' | '(' | '[')) | data_ref | string_literal
+parent_string ::= data_reference | string_literal
 // R610
 substring_range ::= (expr)? ':' (expr)?
 // R611
-data_ref ::= part_ref ('%' part_ref)*
+data_reference ::= data_reference_part ('%' data_reference_part)*
 // R612
-private part_ref ::= fidentifier ('(' <<list section_subscript>>? ')')? (image_selector)?
+data_reference_part ::= fidentifier ('(' <<list section_subscript>>? ')')? (image_selector)?
 // R613 - 614 are trivial
 // R615 - 618 are excrescent
 // R619 is trivial
@@ -626,7 +626,7 @@ allocate_stmt ::= allocate_ '(' (type_spec '::')? <<list allocation>> (',' <<lis
 // R631
 allocation ::= allocate_object ('(' <<list allocate_shape_spec>> ')')? ('[' allocate_coarray_spec ']')?
 // R632
-private allocate_object ::= ((fidentifier !('%' | '(' | '[')) | data_ref) !'='
+private allocate_object ::= (data_reference) !'='
 // R633
 allocate_shape_spec ::= (expr ':')? expr
 // R634 - 635 are trivial
@@ -637,7 +637,7 @@ allocate_coshape_spec ::= (expr ':')? expr
 // R638
 nullify_stmt ::= nullify_ '(' <<list pointer_object>> ')' { pin = 3 }
 // R639
-pointer_object ::= (fidentifier !('%' | '(' | '[')) | data_ref
+pointer_object ::= data_reference
 // R640
 deallocate_stmt ::= deallocate_ '(' <<list allocate_object>> (',' <<list parameters_spec>>)? ')' { pin = 3 }
 // R641 is not for parser
@@ -683,7 +683,7 @@ structure_constructor ::= (fidentifier '(' <<list component_spec>> ')' !'(')
 // R468
 array_constructor ::= ('(/' ac_spec '/)') | ('[' ac_spec ']')
 // R601
-designator ::= (fidentifier !('%' | '(' | '[')) | (data_ref !"(") | substring /*| function_reference /*| array_section  | complex_part_designator */
+designator ::= (data_reference !"(") | substring
 // R304, R305 modified
 constant ::= floatingpointliteral | doubleprecisionliteral | integerliteral | complex_literal
             | logical_literal | string_literal | boz_literal
@@ -1027,7 +1027,7 @@ function_reference ::= procedure_designator '(' <<list actual_arg_spec>>? ')' { 
 // R1220
 call_stmt ::= call_ procedure_designator ('(' <<list actual_arg_spec>>? ')')? { pin = 1 }
 // R1221
-procedure_designator ::= data_ref
+procedure_designator ::= data_reference
 // R1222
 actual_arg_spec ::= (fidentifier '=')? actual_arg
 // 1223
