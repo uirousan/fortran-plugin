@@ -17,6 +17,7 @@ buildscript {
 plugins {
     id 'org.jetbrains.intellij' version "0.2.0"
     id 'org.jetbrains.kotlin.jvm' version '1.1.1'
+    id 'de.undercouch.download' version '3.2.0'
 }
 
 allprojects {
@@ -33,6 +34,7 @@ allprojects {
         downloadSources Boolean.valueOf(downloadIdeaSources)
         updateSinceUntilBuild = false
         instrumentCode = false
+        alternativeIdePath = "debugger/lib/clion"
     }
 
     repositories {
@@ -79,7 +81,7 @@ static def codegenTask(project, task) {
 def lexerTask(project, lexerName, pkg) {
     return codegenTask(project, tasks.create("generate${lexerName}", JavaExec) {
         def src = "$project.projectDir/src/main/java/org/jetbrains/fortran/lang/lexer/${lexerName}.flex"
-        def dst = "$project.projectDir/src/main/java/$pkg"
+        def dst = "$project.projectDir/src/gen/$pkg"
 
         main = 'jflex.Main'
         classpath = files('lib/jflex/JFlex.jar')
@@ -100,8 +102,9 @@ def parserTask(project, parserName, pkg) {
         def src = "$project.projectDir/src/main/java/org/jetbrains/fortran/lang/parser/${parserName}.bnf"
         def dst = "$dstRoot/$pkg"
         doFirst {
-            delete file(dst)
-            delete file("$dstRoot/org/jetbrains/fortran/lang/")
+            delete file("$dstRoot/org/jetbrains/fortran/lang/parser")
+            delete file("$dstRoot/org/jetbrains/fortran/lang/psi")
+            delete file("$dstRoot/org/jetbrains/fortran/lang/FortranTypes.java")
         }
 
         main = 'org.intellij.grammar.Main'
@@ -113,3 +116,25 @@ def parserTask(project, parserName, pkg) {
         outputs.dir dst
     })
 }
+
+project(':') {
+//    sourceSets {
+//        main {
+//            kotlin.srcDirs += 'debugger/src/main/kotlin'
+//            compileClasspath += files("debugger/lib/clion/lib/clion.jar")
+//        }
+//    }
+}
+
+task downloadClion(type: de.undercouch.gradle.tasks.download.Download) {
+    src "https://download.jetbrains.com/cpp/CLion-${clionVersion}.zip"
+    dest new File(project.projectDir, "debugger/lib/clion-${clionVersion}.zip")
+    overwrite false
+}
+
+task unpackClion(dependsOn: downloadClion, type: Copy) {
+    from zipTree("debugger/lib/clion-${clionVersion}.zip")
+    into new File(project.projectDir, "debugger/lib/clion")
+}
+
+compileKotlin.dependsOn unpackClion
